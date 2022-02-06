@@ -17,7 +17,7 @@ var config = {
     }
 };
 
-var game = new Phaser.Game(config);
+new Phaser.Game(config);
 
 
 function preload ()
@@ -30,13 +30,11 @@ function preload ()
     this.load.tilemapTiledJSON("level0map", "/assets/platform1/level0.json");
 }
 
-let platforms;
 let player;
 let stars;
 var score = 0;
 var scoreText;
 var bombs;
-var gameOver;
 
 function create ()
 {
@@ -113,7 +111,6 @@ function hitBomb (player, bomb)
     this.physics.pause();
     player.setTint(0xff0000);
     player.anims.play('turn');
-    gameOver = true;
 }
 
 function update ()
