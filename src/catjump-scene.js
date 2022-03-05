@@ -4,9 +4,10 @@ import Player from './cathead.js';
 export default class PlatformerScene extends Phaser.Scene {
     preload() {
         this.load.image('background', 'assets/platform1/background.png');
-        this.load.svg('cathead', 'assets/catjump/cat.svg');
+        // this.load.svg('cathead', 'assets/catjump/cat.svg');
+        this.load.spritesheet('cathead','assets/catjump/cat-jump-225.png',{frameWidth:225,frameHeight:225})
         this.load.image("basictilemap", "/assets/platform1/basictile.png");
-        this.load.tilemapTiledJSON("level0map", "/assets/platform1/level0.json");
+        this.load.tilemapTiledJSON("level0map", "/assets/platform1/singleFrameIce.json");
     }
     create () {
         // add background

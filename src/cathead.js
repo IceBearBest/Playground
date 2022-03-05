@@ -8,7 +8,7 @@ export default class Player {
             .sprite(x, y, 'cathead', 0) // create player
             .setDrag(1000, 0)
             .setMaxVelocity(300, 400)
-            .setScale(0.2)
+            .setScale(0.3)
             .setBounce(0.3);
         // Track the arrow keys & WASD
         const { LEFT, RIGHT, UP, W, A, D } = Phaser.Input.Keyboard.KeyCodes;
@@ -21,6 +21,13 @@ export default class Player {
         d: D
         });
         this.audio_jump = new Audio('../sound/jump2.wav');
+
+        anims.create({
+            key: 'idle',
+            frames: anims.generateFrameNumbers('cathead', { start: 1, end: 5 }),
+            frameRate: 10,
+            repeat: -1
+        });
     }
 
     update() {
@@ -45,9 +52,13 @@ export default class Player {
             sprite.setVelocityY(-330);
             this.audio_jump.play();
         }
-
+        if (onGround){
+            sprite.anims.play('idle', true);
+        }
+        else{
+            sprite.anims.play('idle', false);
+        }
     }
-
     destroy() {
         this.sprite.destroy();
     }

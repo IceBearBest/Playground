@@ -4,7 +4,7 @@ import PlatformerScene from './catjump-scene';
 
 const config = {
   type: Phaser.AUTO,
-  width: 800,
+  width: 840,
   height: 630,
   parent:'root',
   pixelart:true,
