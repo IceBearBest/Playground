@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import Player from './cathead.js';
 
-export default class PlatformerScene extends Phaser.Scene {
+class PlatformerScene extends Phaser.Scene {
     preload() {
         this.load.image('background', 'assets/platform1/background.png');
         // this.load.svg('cathead', 'assets/catjump/cat.svg');
@@ -32,3 +32,24 @@ export default class PlatformerScene extends Phaser.Scene {
         this.player.update();
     }
 }
+
+function InitCatJumpSingle() {
+    const config = {
+        type: Phaser.AUTO,
+        width: 840,
+        height: 630,
+        parent:'root',
+        pixelart:true,
+        scene: PlatformerScene,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 300 },
+            }
+        },
+      };
+    
+    new Phaser.Game(config);   
+};
+
+export {InitCatJumpSingle};
