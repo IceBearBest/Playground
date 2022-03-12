@@ -1,11 +1,11 @@
 import Phaser from 'phaser';
-import Player from './cathead.js';
+import Player from './cathead.js'; // Player
 
 class PlatformerScene extends Phaser.Scene {
     preload() {
         this.load.image('background', 'assets/platform1/background.png');
-        // this.load.svg('cathead', 'assets/catjump/cat.svg');
         this.load.spritesheet('cathead','assets/catjump/cat-jump-225.png',{frameWidth:225,frameHeight:225})
+        this.load.image('star', '../assets/platform1/star.png');
         this.load.image("basictilemap", "/assets/platform1/basictile.png");
         this.load.tilemapTiledJSON("level0map", "/assets/platform1/singleFrameIce.json");
     }
@@ -24,9 +24,27 @@ class PlatformerScene extends Phaser.Scene {
         this.physics.add.collider(this.player.sprite, this.platformLayer);
         this.cameras.main.startFollow(this.player.sprite);
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-  
-    }
+        // add stars
+        const starPositionLayer = map.getObjectLayer('stars');
+        this.stars = this.physics.add.group();
+        this.physics.add.collider(this.stars, this.platformLayer);
+        starPositionLayer.objects.forEach(object => { 
+            if(object.name === 'star'){
+                this.stars.create(object.x, object.y, 'star');  
+            }}
+        )  
+        this.physics.add.overlap(this.player.sprite, this.stars, collectStar, null, this);
+        this.score = 0;
+        this.scoreText=this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+        function collectStar (player, star) {
+            console.log("Overlapped")
+            star.disableBody(true, true);
+            this.score += 10;
+            this.scoreText.setText('Score: ' + this.score);
+        }
+        // add enermies
 
+    }
     update ()
     {
         this.player.update();
