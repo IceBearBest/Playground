@@ -21,7 +21,7 @@ export default class Player {
         d: D
         });
         this.audio_jump = new Audio('../sound/jump2.wav');
-
+        this.sprite.setCollideWorldBounds(true);
         anims.create({
             key: 'idle',
             frames: anims.generateFrameNumbers('cathead', { start: 1, end: 5 }),
@@ -37,11 +37,11 @@ export default class Player {
 
         if (keys.left.isDown || keys.a.isDown)
         {
-            sprite.setVelocityX(-160);
+            sprite.setVelocityX(-200);
         }
         else if (keys.right.isDown || keys.d.isDown)
         {
-            sprite.setVelocityX(160);
+            sprite.setVelocityX(200);
         }
         else
         {

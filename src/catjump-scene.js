@@ -1,17 +1,26 @@
 import Phaser from 'phaser';
 import Player from './cathead.js'; // Player
+import Rabbit from './rabbit.js';
 
 class PlatformerScene extends Phaser.Scene {
     preload() {
         this.load.image('background', 'assets/platform1/background.png');
         this.load.spritesheet('cathead','assets/catjump/cat-jump-225.png',{frameWidth:225,frameHeight:225})
         this.load.image('star', '../assets/platform1/star.png');
+        this.load.spritesheet('rabbit', '../assets/sprites/rabbit96.png',{frameWidth:96, frameHeight:96});
         this.load.image("basictilemap", "/assets/platform1/basictile.png");
         this.load.tilemapTiledJSON("level0map", "/assets/platform1/singleFrameIce.json");
+        this.load.audio("bgm", ["sound/pck404_cosy_bossa.wav"]);
+        this.load.audio("coin", ["sound/coin.wav"]);
+        this.load.audio("gameover", ["sound/gameover.wav"]);
     }
     create () {
         // add background
         this.add.image(400, 300, 'background');
+        var bgm = this.sound.add("bgm", {loop:true});
+        var coin = this.sound.add("coin", {loop:false});
+        var gameover = this.sound.add("gameover", {loop:false});
+        bgm.play();
         // add platforms
         const map = this.make.tilemap({key:'level0map'});
         const tiles = map.addTilesetImage("Basic","basictilemap");
@@ -37,17 +46,39 @@ class PlatformerScene extends Phaser.Scene {
         this.score = 0;
         this.scoreText=this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
         function collectStar (player, star) {
-            console.log("Overlapped")
             star.disableBody(true, true);
             this.score += 10;
             this.scoreText.setText('Score: ' + this.score);
+            coin.play();
+            if (this.stars.countActive(true)===0){
+                this.stars.children.iterate(function (child) {
+                    child.enableBody(true, child.x, 0, true, true);
+                });
+                var enermy = new Rabbit(this, 370, 200);
+                this.rabbits.push(enermy);
+                this.enermies.add(enermy.sprite);
+            }
         }
         // add enermies
-
+        this.rabbits = []
+        this.enermies = this.physics.add.group();
+        this.physics.add.collider(this.enermies, this.platformLayer);
+        this.physics.add.collider(this.player.sprite, this.enermies, hitEnermy, null, this);
+        function hitEnermy (player, enermy)
+        {
+            this.physics.pause();
+            this.add.text(400, 300, 'Game Over', { fontSize: '32px', fill: '#000' });
+            bgm.pause();
+            gameover.play();
+        }
     }
     update ()
     {
         this.player.update();
+        this.rabbits.forEach(enermy => {
+            enermy.update();
+        })
+        
     }
 }
 
