@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 export default class Rabbit {
     constructor(scene, x, y){
         this.scene = scene;
