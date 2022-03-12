@@ -13,13 +13,13 @@ export default class Rabbit {
             .setBounce(0.3);
         anims.create({
             key: 'left',
-            frames: anims.generateFrameNumbers('rabbit', { start: 9, end: 12 }),
+            frames: anims.generateFrameNumbers('rabbit', { start: 8, end: 11 }),
             frameRate: 8,
             repeat: -1
         });
         anims.create({
             key: 'right',
-            frames: anims.generateFrameNumbers('rabbit', { start: 13, end: 16 }),
+            frames: anims.generateFrameNumbers('rabbit', { start: 12, end: 15 }),
             frameRate: 8,
             repeat: -1
         });
