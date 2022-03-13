@@ -34,6 +34,7 @@ class CatDropScene extends Phaser.Scene{
         floor.setStatic(true);
         this.framenames = ['cat-bun','cat-happy','demon','cat2','cat-crown','cat-sword','cat-wink','cat-stand','cat-astro']
         this.frameScale = {'cat-bun': 0.6, 'cat-happy':0.8, 'demon': 1.1,'cat2':0.8, 'cat-crown': 1.0,'cat-sword':1.0 ,'cat-wink': 0.9,'cat-stand':1.2, 'cat-astro':0.9}
+        this.frameBoundary = {'cat-bun': 0.5, 'cat-happy':0.6, 'demon': 0.8,'cat2':0.7, 'cat-crown': 0.7,'cat-sword':0.7 ,'cat-wink': 0.7,'cat-stand':0.7, 'cat-astro':0.8};
         this.framePool = {'cat-bun':1,'cat-happy':0.5,'demon':0.25};
         this.nextFrame = weightedRandom(this.framePool);
         this.preview = this.add.image(550, 50, 'cats', this.nextFrame).setDisplaySize(80,80);
@@ -49,7 +50,8 @@ class CatDropScene extends Phaser.Scene{
         })
     }
     createImage(framename, x, y){
-        var cat = this.matter.add.image(x, y, 'cats', framename, {restitution: 1, friction:0, shape:'circle'}).setScale(this.frameScale[framename]);
+        var cat = this.matter.add.image(x, y, 'cats', framename, {restitution: 1, friction:0, shape: 'circle'}).setScale(this.frameScale[framename]);
+        cat.setCircle(cat.width/2*this.frameBoundary[framename]);
         cat.setOnCollide(pair => {
             var bodyA = pair.bodyA;
             var bodyB = pair.bodyB;
