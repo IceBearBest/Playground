@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 
 // [TODO] Add GameOver Condition, Timer Needed?
+// [TODO] build struct for frames and add score
 function weightedRandom(pool) {
     var candidates = Object.keys(pool);
     var sum = 0;
