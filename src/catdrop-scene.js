@@ -1,7 +1,6 @@
 import Phaser from "phaser";
 
 // [TODO] Add GameOver Condition, Timer Needed?
-// [TODO] Rescale to support mobile
 function weightedRandom(pool) {
     var candidates = Object.keys(pool);
     var sum = 0;
@@ -22,11 +21,15 @@ function weightedRandom(pool) {
 class CatDropScene extends Phaser.Scene{
     preload(){
         this.load.atlas('cats', 'assets/platform1/rainco_cats.png', 'assets/platform1/rainco_cats_atlas.json');
+        this.load.audio('combine',['sound/coin2.wav']);
+        this.load.audio('click', ['sound/click3.wav']);
     }
     create(){
         this.matter.world.setBounds();
-        var floor = this.add.rectangle(300, 800, 600, 50, 0x3273a8);
-        this.add.line(300,50,0,50, 600, 50, 0xe07f70, 5);
+        this.combine = this.sound.add('combine');
+        var click = this.sound.add('click');
+        var floor = this.add.rectangle(300, 800, 600, 50, 0xdda15e);
+        this.add.line(300,50,0,50, 600, 50, 0xdda15e, 5);
         this.matter.add.gameObject(floor);
         floor.setStatic(true);
         this.framenames = ['cat-bun','cat-happy','demon','cat2','cat-crown','cat-sword','cat-wink','cat-stand','cat-astro']
@@ -34,11 +37,12 @@ class CatDropScene extends Phaser.Scene{
         this.framePool = {'cat-bun':1,'cat-happy':0.5,'demon':0.25};
         this.nextFrame = weightedRandom(this.framePool);
         this.preview = this.add.image(550, 50, 'cats', this.nextFrame).setDisplaySize(80,80);
-        this.add.text(480, 20, 'Next', { fontSize: '15px', fill: '#000' })
+        this.add.text(480, 20, 'Next', { fontSize: '15px', fill: '#bc6c25' })
         this.input.on('pointerdown', ()=>{
             const worldPoint = this.input.activePointer.positionToCamera(this.cameras.main);
             const x = worldPoint.x + Phaser.Math.RND.integerInRange(-10, 10);
             this.createImage(this.nextFrame, x, 100)
+            click.play();
             this.nextFrame = weightedRandom(this.framePool);
             this.preview.destroy();
             this.preview = this.add.image(550, 50, 'cats', this.nextFrame).setDisplaySize(80,80);
@@ -55,6 +59,7 @@ class CatDropScene extends Phaser.Scene{
                     const idx = this.framenames.indexOf(name);
                     if (idx !== this.framenames.length-1){
                         this.createImage(this.framenames[idx+1], bodyA.position.x, bodyA.position.y);
+                        this.combine.play();
                         if(!(this.framenames[idx+1] in this.framePool)){
                             this.framePool[this.framenames[idx+1]] = this.framePool[this.framenames[idx]]*0.5;
                         }
@@ -76,7 +81,7 @@ export default function InitCatDrop(){
         type: Phaser.AUTO,
         width: 600,
         height: 800,
-        backgroundColor: "#f2f2e9",
+        backgroundColor: "#fefae0",
         parent: "root",
         pixelart: true,
         scene: CatDropScene,
@@ -84,7 +89,7 @@ export default function InitCatDrop(){
             default: "matter",
             matter: {
                 gravity: {y: 1},
-                debug: true,
+                debug: false,
             }
         },
         scale: {
