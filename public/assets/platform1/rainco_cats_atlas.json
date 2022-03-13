@@ -1,0 +1,281 @@
+{
+    "frames": [
+        {
+            "filename": "cat-astro2",
+            "frame": {
+                "w": 259,
+                "h": 200,
+                "x": 0,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-astro",
+            "frame": {
+                "w": 209,
+                "h": 200,
+                "x": 0,
+                "y": 200
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-hug",
+            "frame": {
+                "w": 206,
+                "h": 180,
+                "x": 259,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "house",
+            "frame": {
+                "w": 200,
+                "h": 200,
+                "x": 209,
+                "y": 200
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-sword",
+            "frame": {
+                "w": 172,
+                "h": 150,
+                "x": 0,
+                "y": 400
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-cry",
+            "frame": {
+                "w": 171,
+                "h": 150,
+                "x": 172,
+                "y": 400
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-fat",
+            "frame": {
+                "w": 171,
+                "h": 150,
+                "x": 343,
+                "y": 400
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-father",
+            "frame": {
+                "w": 171,
+                "h": 150,
+                "x": 465,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-fish",
+            "frame": {
+                "w": 171,
+                "h": 150,
+                "x": 465,
+                "y": 150
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-stand",
+            "frame": {
+                "w": 171,
+                "h": 150,
+                "x": 0,
+                "y": 550
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-wink",
+            "frame": {
+                "w": 171,
+                "h": 150,
+                "x": 171,
+                "y": 550
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-crown",
+            "frame": {
+                "w": 162,
+                "h": 150,
+                "x": 342,
+                "y": 550
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-feather",
+            "frame": {
+                "w": 150,
+                "h": 150,
+                "x": 504,
+                "y": 550
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat2",
+            "frame": {
+                "w": 124,
+                "h": 150,
+                "x": 654,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-happy-feet",
+            "frame": {
+                "w": 137,
+                "h": 120,
+                "x": 636,
+                "y": 150
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-happy",
+            "frame": {
+                "w": 121,
+                "h": 100,
+                "x": 409,
+                "y": 300
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "cat-bun",
+            "frame": {
+                "w": 114,
+                "h": 100,
+                "x": 654,
+                "y": 270
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "mouse",
+            "frame": {
+                "w": 100,
+                "h": 100,
+                "x": 530,
+                "y": 300
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "demon",
+            "frame": {
+                "w": 100,
+                "h": 100,
+                "x": 654,
+                "y": 370
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "chicken",
+            "frame": {
+                "w": 80,
+                "h": 80,
+                "x": 514,
+                "y": 470
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "dog",
+            "frame": {
+                "w": 80,
+                "h": 80,
+                "x": 594,
+                "y": 470
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}

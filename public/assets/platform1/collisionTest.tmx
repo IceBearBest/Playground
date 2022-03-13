@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="12" height="9" tilewidth="70" tileheight="70" infinite="0" nextlayerid="2" nextobjectid="1">
+ <editorsettings>
+  <export target="collisionTest.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="Basic" tilewidth="70" tileheight="70" spacing="2" tilecount="156" columns="12">
+  <image source="basictile.png" width="914" height="936"/>
+  <tile id="15">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="5.30526" y="50.3018">
+     <polygon points="0,0 -5.30526,6.87719 -5.10877,15.1298 -0.589474,18.8632 59.5368,19.2561 64.4491,13.7544 64.4491,5.69825 58.3579,-0.392982"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0.589474" y="0.982456">
+     <polygon points="0,0 68.1825,67.7895 -0.589474,68.3789"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="43">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="63">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0.392982" y="70.3439">
+     <properties>
+      <property name="collision" type="bool" value="true"/>
+     </properties>
+     <polygon points="0,0 69.3614,-70.1474 69.1649,-0.392982"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="75">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0.392982" y="0.392982" width="69.1649" height="40.2807"/>
+   </objectgroup>
+  </tile>
+  <tile id="87">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0.196491" y="0.196491" width="69.5579" height="39.1018"/>
+   </objectgroup>
+  </tile>
+  <tile id="98">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0.196491" y="0.392982" width="69.1649" height="69.3614"/>
+   </objectgroup>
+  </tile>
+  <tile id="99">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0.392982" width="69.7544" height="40.0842"/>
+   </objectgroup>
+  </tile>
+  <tile id="102">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="2" x="0.392982" y="28.6877">
+     <polygon points="0,0 12.9684,4.32281 12.9684,41.0667 -0.392982,41.0667"/>
+    </object>
+    <object id="4" x="13.7544" y="33.4035" width="56.1965" height="36.3509"/>
+    <object id="5" x="25.5439" y="33.4035">
+     <polygon points="0,0 21.0246,-8.25263 36.3509,-7.66316 44.407,-4.71579 44.2105,-0.589474"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="123">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="2" x="0.196491" y="0.196491" width="69.5579" height="23.3825"/>
+    <object id="3" x="0.392982" y="24.1684">
+     <polygon points="0,0 -0.392982,45.7825 23.5789,45.7825 40.6737,19.0596 69.1649,-0.392982"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="124">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="4">
+    <object id="4" x="0.196491" y="45.3895" width="69.3614" height="23.3825"/>
+   </objectgroup>
+  </tile>
+  <tile id="134">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="2" x="0" y="0.392982" width="69.3614" height="69.1649">
+     <properties>
+      <property name="collision" type="bool" value="true"/>
+     </properties>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="147">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="6" x="0.196491" y="0.785965" width="69.3614" height="21.614"/>
+    <object id="7" x="0.982456" y="23.3825">
+     <polygon points="0,0 45.586,46.7649 68.9684,46.5684 68.5754,-1.17895"/>
+    </object>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer id="1" name="platform" width="12" height="9">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAEAAAACHAAAAhwAAACgAAAAAAAAAAAAAAAAAAAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZAAAAFgAAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACUAAAAhwAAAHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhwAAAIcAAACHAAAAZwAAAGcAAABnAAAAZwAAAGcAAACHAAAAhwAAAIcAAACHAAAAmwAAAJsAAACbAAAALAAAACwAAAAsAAAALAAAACwAAACbAAAAmwAAAJsAAACbAAAA
+  </data>
+ </layer>
+</map>

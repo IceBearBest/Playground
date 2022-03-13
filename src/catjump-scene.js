@@ -94,7 +94,7 @@ function InitCatJumpSingle() {
             default: 'arcade',
             arcade: {
                 gravity: { y: 300 },
-            }
+            },
         },
       };
     
