@@ -96,6 +96,10 @@ function InitCatJumpSingle() {
                 gravity: { y: 300 },
             },
         },
+        scale: {
+            mode: Phaser.Scale.FIT,
+            autoCenter: Phaser.Scale.CENTER_BOTH,
+        },
       };
     
     new Phaser.Game(config);   

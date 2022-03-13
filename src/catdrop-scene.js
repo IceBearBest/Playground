@@ -86,6 +86,10 @@ export default function InitCatDrop(){
                 gravity: {y: 1},
                 debug: true,
             }
+        },
+        scale: {
+            mode: Phaser.Scale.FIT,
+            autoCenter: Phaser.Scale.CENTER_BOTH,
         }
     };
     new Phaser.Game(config);
