@@ -1,5 +1,7 @@
 import Phaser from "phaser";
 
+// [TODO] Add GameOver Condition, Timer Needed?
+// [TODO] Rescale to support mobile
 function weightedRandom(pool) {
     var candidates = Object.keys(pool);
     var sum = 0;
@@ -41,7 +43,6 @@ class CatDropScene extends Phaser.Scene{
             this.preview.destroy();
             this.preview = this.add.image(550, 50, 'cats', this.nextFrame).setDisplaySize(80,80);
         })
-        // [TODO] Add GameOver Condition, Timer Needed?
     }
     createImage(framename, x, y){
         var cat = this.matter.add.image(x, y, 'cats', framename, {restitution: 1, friction:0, shape:'circle'}).setScale(this.frameScale[framename]);
