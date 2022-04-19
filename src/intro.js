@@ -77,27 +77,41 @@ var songs = [
     name: 'On Wings of Song (RH)',
     path: 'OnWingsOfSong(RH).mp3',
     date: '2022-04-17',
-    author: {}
+    description: 'from Op. 34, No. 2 from voice and piano',
+    author: {
+      name: 'Felix Mendelssohn',
+    },
+    arranged: 'James Bastien'
   },
   {
     name: 'Morning Mood',
     path: 'MorningMood.mp3',
     date: '2022-04-16',
-    author: {}
+    description: "from \"Peer Gynt Suit\", No. 1, Op. 46 (Theme from 1st Movement)",
+    author: {
+      name: 'Edward Greig',
+    },
+    arranged: 'James Bastien'
   },
   {
     name: 'Can-Can(faster)',
     path: 'Cancan-faster.mp3',
     date: '2022-03-06',
+    chord: 'Key of C Major',
     author: {
-      name: 'Jacques Offenbach'
+      name: 'Jacques Offenbach',
+      year: '1819-1880',
+      nationality: 'France',
     }
   },
   {
     name: 'The Lion Sleep Tonight',
     path: 'TheLionSleepTonight.mp3',
     date: '2022-03-05',
-    author: {}
+    description: "Worlds and Music by George David Weiss, Hugo Peritti, Luigi Creatore, and Solomon Linda",
+    author: {
+      name: ''
+    }
   },
   {
     name: 'Can-Can',
@@ -128,7 +142,9 @@ var songs = [
     path: 'HungarianDance2.mp3',
     date: '2022-03-05',
     author: {
-      name: ''
+      name: 'Johannes Brahms',
+      year: '1883-1897',
+      nationality: 'Germany',
     }
   },
   {
@@ -136,7 +152,9 @@ var songs = [
     path: 'HungarianDance1.mp3',
     date: '2021-11-26',
     author: {
-      name: ''
+      name: 'Johannes Brahms',
+      year: '1883-1897',
+      nationality: 'Germany',
     }
   },
   {
