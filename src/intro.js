@@ -24,13 +24,13 @@ var cards = [
   }
 ];
 
-class Main extends React.Component {
+class GamePage extends React.Component {
   render() {
     return (
       <div>
         <CardGroup>
         {cards.map((card, idx) => {
-          return <MyCard card={card} key={idx}></MyCard>;
+          return <MyGameCard card={card} key={idx}></MyGameCard>;
         })}
         </CardGroup>
       </div>
@@ -48,6 +48,8 @@ class HeaderMenu extends React.Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#game">Game</Nav.Link>
+              <Nav.Link href="#piano">Piano</Nav.Link>
               <Nav.Link href="#link">Achive</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
             </Nav>
@@ -58,7 +60,7 @@ class HeaderMenu extends React.Component {
   }
 }
 
-class MyCard extends React.Component {
+class MyGameCard extends React.Component {
   render() {
     return (
       <Card style={{ width: '18rem' }}>
@@ -75,4 +77,4 @@ class MyCard extends React.Component {
   }
 }
 
-export { Main, HeaderMenu };
+export { GamePage, HeaderMenu };

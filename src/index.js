@@ -2,7 +2,7 @@ import InitCatDrop from './catdrop-scene.js';
 import { InitCatJumpSingle } from './catjump-scene.js';
 import { InitMatter } from './tutorial/matter_example.js';
 import { InitPhaserMatter } from './tutorial/phaser_matter.js';
-import { HeaderMenu, Main } from './intro.js';
+import { HeaderMenu, GamePage } from './intro.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -18,6 +18,8 @@ if (window.location.hash === '#CatJumpSingle') {
   InitPhaserMatter();
 } else if (window.location.hash === '#CatDrop') {
   InitCatDrop();
+} else if (window.location.hash === '#game') {
+  ReactDOM.render(<GamePage></GamePage>, document.getElementById('root'));
 } else {
-  ReactDOM.render(<Main></Main>, document.getElementById('root'));
+  ReactDOM.render(<GamePage></GamePage>, document.getElementById('root'));
 }
