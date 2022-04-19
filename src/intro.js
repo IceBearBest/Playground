@@ -200,7 +200,7 @@ class PianoPage extends React.PureComponent {
           <thead>
             <tr>
               <th>#</th>
-              <th>Date</th>
+              <th>Played On</th>
               <th>Name</th>
               <th>Chord</th>
               <th>Author</th>
