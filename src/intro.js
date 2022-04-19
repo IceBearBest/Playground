@@ -74,6 +74,32 @@ class GamePage extends React.Component {
 
 var songs = [
   {
+    name: 'On Wings of Song (RH)',
+    path: 'OnWingsOfSong(RH).mp3',
+    date: '2022-04-17',
+    author: {}
+  },
+  {
+    name: 'Morning Mood',
+    path: 'MorningMood.mp3',
+    date: '2022-04-16',
+    author: {}
+  },
+  {
+    name: 'Can-Can(faster)',
+    path: 'Cancan-faster.mp3',
+    date: '2022-03-06',
+    author: {
+      name: 'Jacques Offenbach'
+    }
+  },
+  {
+    name: 'The Lion Sleep Tonight',
+    path: 'TheLionSleepTonight.mp3',
+    date: '2022-03-05',
+    author: {}
+  },
+  {
     name: 'Can-Can',
     path: 'Cancan.mp3',
     date: '2022-03-05',
@@ -96,6 +122,30 @@ var songs = [
       nationality: 'arranged'
     },
     chord: 'Key of C Major'
+  },
+  {
+    name: 'HungarianDance',
+    path: 'HungarianDance2.mp3',
+    date: '2022-03-05',
+    author: {
+      name: ''
+    }
+  },
+  {
+    name: 'HungarianDance',
+    path: 'HungarianDance1.mp3',
+    date: '2021-11-26',
+    author: {
+      name: ''
+    }
+  },
+  {
+    name: '风笛舞曲',
+    path: '风笛舞曲.mp3',
+    date: '2020-11-25',
+    author: {
+      name: ''
+    }
   }
 ];
 
@@ -143,18 +193,19 @@ class PianoPage extends React.PureComponent {
               return (
                 <tr>
                   <td>{idx}</td>
+                  <td>{song.date}</td>
                   <td>
                     {
                       <FontAwesomeIcon
                         icon="circle-pause"
                         onClick={() => {
                           this.updateOptions({ playIndex: idx });
-                        }} key={idx}
+                        }}
+                        key={idx}
                       />
                     }
                     {' '.concat(song.name)}
                   </td>
-                  <td>{song.date}</td>
                   <td>{song.chord}</td>
                   <td>{song.author.name}</td>
                 </tr>
