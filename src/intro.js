@@ -11,9 +11,10 @@ import {
 import ReactJkMusicPlayer from 'react-jinke-music-player';
 import 'react-jinke-music-player/assets/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-library.add(fas);
+import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
+import songs from './piano.json';
+import { faCirclePause } from '@fortawesome/free-solid-svg-icons';
+
 var cards = [
   {
     Title: 'Cat Jump Single Frame',
@@ -72,124 +73,52 @@ class GamePage extends React.Component {
   }
 }
 
-var songs = [
-  {
-    name: 'On Wings of Song (RH)',
-    path: 'OnWingsOfSong(RH).mp3',
-    date: '2022-04-17',
-    description: 'from Op. 34, No. 2 from voice and piano',
-    author: {
-      name: 'Felix Mendelssohn',
-    },
-    arranged: 'James Bastien'
-  },
-  {
-    name: 'Morning Mood',
-    path: 'MorningMood.mp3',
-    date: '2022-04-16',
-    description: "from \"Peer Gynt Suit\", No. 1, Op. 46 (Theme from 1st Movement)",
-    author: {
-      name: 'Edward Greig',
-    },
-    arranged: 'James Bastien'
-  },
-  {
-    name: 'Can-Can(faster)',
-    path: 'Cancan-faster.mp3',
-    date: '2022-03-06',
-    chord: 'Key of C Major',
-    author: {
-      name: 'Jacques Offenbach',
-      year: '1819-1880',
-      nationality: 'France',
-    }
-  },
-  {
-    name: 'The Lion Sleep Tonight',
-    path: 'TheLionSleepTonight.mp3',
-    date: '2022-03-05',
-    description: "Worlds and Music by George David Weiss, Hugo Peritti, Luigi Creatore, and Solomon Linda",
-    author: {
-      name: ''
-    }
-  },
-  {
-    name: 'Can-Can',
-    path: 'Cancan.mp3',
-    date: '2022-03-05',
-    description:
-      'can-can - a lively French dance that features high kicks perfomed by women in a chorus line',
-    author: {
-      name: 'Jacques Offenbach',
-      year: '1819-1880',
-      nationality: 'France'
-    },
-    chord: 'Key of C Major'
-  },
-  {
-    name: 'The Entertainer',
-    path: 'Entertainer.mp3',
-    date: '2022-03-05',
-    author: {
-      name: 'Scott Joplin',
-      year: '1867-1917',
-      nationality: 'arranged'
-    },
-    chord: 'Key of C Major'
-  },
-  {
-    name: 'HungarianDance',
-    path: 'HungarianDance2.mp3',
-    date: '2022-03-05',
-    author: {
-      name: 'Johannes Brahms',
-      year: '1883-1897',
-      nationality: 'Germany',
-    }
-  },
-  {
-    name: 'HungarianDance',
-    path: 'HungarianDance1.mp3',
-    date: '2021-11-26',
-    author: {
-      name: 'Johannes Brahms',
-      year: '1883-1897',
-      nationality: 'Germany',
-    }
-  },
-  {
-    name: '风笛舞曲',
-    path: '风笛舞曲.mp3',
-    date: '2020-11-25',
-    author: {
-      name: ''
-    }
-  }
-];
-
 class PianoPage extends React.PureComponent {
   constructor(props) {
     super(props);
     var audios = [];
+    var audioPaused = [];
+    this.audio = {};
     songs.forEach((song) => {
-      audios.push({ name: song.name, musicSrc: 'mypiano/'.concat(song.path) });
+      audios.push({
+        name: song.name,
+        musicSrc: 'mypiano/'.concat(song.filePath)
+      });
+      audioPaused.push(true);
     });
     this.state = {
       options: {
         audioLists: audios,
         playIndex: 0,
         autoPlay: false,
-        mode: 'full'
-      }
+        mode: 'full',
+        getAudioInstance: (audio) => {
+          this.audio = audio;
+        }
+      },
+      audioPaused: audioPaused
     };
   }
-
-  updateOptions = (options) => {
+  onClick = (idx) => {
+    var audioPaused = this.state.audioPaused;
+    var current_idx = this.state.options.playIndex;
+    audioPaused[current_idx] = true;
+    if (current_idx === idx) {
+      if (this.audio.paused) {
+        this.audio.play();
+        audioPaused[current_idx] = false;
+      } else {
+        this.audio.pause();
+        audioPaused[current_idx] = true;
+      }
+    } else {
+      audioPaused[idx] = !audioPaused[idx];
+    }
     const data = {
       ...this.state.options,
-      ...options
+      playIndex: idx
     };
-    this.setState({ options: data });
+    this.setState({ options: data, audioPaused: audioPaused });
   };
 
   render() {
@@ -211,21 +140,22 @@ class PianoPage extends React.PureComponent {
               return (
                 <tr>
                   <td>{idx}</td>
-                  <td>{song.date}</td>
+                  <td>{song.playedOn}</td>
                   <td>
                     {
                       <FontAwesomeIcon
-                        icon="circle-pause"
-                        onClick={() => {
-                          this.updateOptions({ playIndex: idx });
-                        }}
-                        key={idx}
+                        icon={
+                          this.state.audioPaused[idx]
+                            ? faCirclePlay
+                            : faCirclePause
+                        }
+                        onClick={() => this.onClick(idx)}
                       />
                     }
                     {' '.concat(song.name)}
                   </td>
                   <td>{song.chord}</td>
-                  <td>{song.author.name}</td>
+                  <td>{song.author}</td>
                 </tr>
               );
             })}

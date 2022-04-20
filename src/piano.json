@@ -1,0 +1,76 @@
+[
+  {
+    "name": "On Wings of Song",
+    "versionTag": ["RH"],
+    "filePath": "OnWingsOfSong(RH).mp3",
+    "playedOn": "2022-04-17",
+    "origin": "Op. 34, No. 2 from voice and piano",
+    "author": "Felix Mendelssohn",
+    "arrangedBy": "James Bastien"
+  },
+  {
+    "name": "Morning Mood",
+    "filePath": "MorningMood.mp3",
+    "playedOn": "2022-04-16",
+    "origin": "\"Peer Gynt Suit\", No. 1, Op. 46 (Theme from 1st Movement)",
+    "author": "Edward Greig",
+    "arrangedBy": "James Bastien"
+  },
+  {
+    "name": "Can-Can",
+    "versionTag": ["faster"],
+    "filePath": "Cancan-faster.mp3",
+    "playedOn": "2022-03-06",
+    "chord": "Key of C Major",
+    "author": "Jacques Offenbach",
+    "author-year": "1819-1880",
+    "author-nationality": "France"
+  },
+  {
+    "name": "The Lion Sleep Tonight",
+    "filePath": "TheLionSleepTonight.mp3",
+    "playedOn": "2022-03-05",
+    "description": "Worlds and Music by George David Weiss, Hugo Peritti, Luigi Creatore, and Solomon Linda",
+    "author": "George David Weiss et.al."
+  },
+  {
+    "name": "Can-Can",
+    "filePath": "Cancan.mp3",
+    "playedOn": "2022-03-05",
+    "description": "a lively French dance that features high kicks perfomed by women in a chorus line",
+    "author": "Jacques Offenbach",
+    "author-year": "1819-1880",
+    "author-nationality": "France",
+    "chord": "Key of C Major"
+  },
+  {
+    "name": "The Entertainer",
+    "filePath": "Entertainer.mp3",
+    "playedOn": "2022-03-05",
+    "author": "Scott Joplin",
+    "author-year": "1867-1917",
+    "author-nationality": "arranged",
+    "chord": "Key of C Major"
+  },
+  {
+    "name": "HungarianDance",
+    "filePath": "HungarianDance2.mp3",
+    "playedOn": "2022-03-05",
+    "author": "Johannes Brahms",
+    "author-year": "1883-1897",
+    "author-nationality": "Germany"
+  },
+  {
+    "name": "Hungarian Dance",
+    "filePath": "HungarianDance1.mp3",
+    "playedOn": "2021-11-26",
+    "author": "Johannes Brahms",
+    "author-year": "1883-1897",
+    "author-nationality": "Germany"
+  },
+  {
+    "name": "风笛舞曲",
+    "filePath": "风笛舞曲.mp3",
+    "playedOn": "2020-11-25"
+  }
+]
