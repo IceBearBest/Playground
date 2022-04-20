@@ -152,7 +152,13 @@ class PianoPage extends React.PureComponent {
                         onClick={() => this.onClick(idx)}
                       />
                     }
-                    {' '.concat(song.name)}
+                    {' '
+                      .concat(song.name)
+                      .concat(
+                        song.versionTag
+                          ? ' ('.concat(song.versionTag.join(',')).concat(') ')
+                          : ''
+                      )}
                   </td>
                   <td>{song.chord}</td>
                   <td>{song.author}</td>
