@@ -77,14 +77,12 @@ class PianoPage extends React.PureComponent {
   constructor(props) {
     super(props);
     var audios = [];
-    var audioPaused = [];
     this.audio = {};
     songs.forEach((song) => {
       audios.push({
         name: song.name,
         musicSrc: 'mypiano/'.concat(song.filePath)
       });
-      audioPaused.push(true);
     });
     this.state = {
       options: {
@@ -96,29 +94,25 @@ class PianoPage extends React.PureComponent {
           this.audio = audio;
         }
       },
-      audioPaused: audioPaused
+      paused: true,
     };
   }
   onClick = (idx) => {
-    var audioPaused = this.state.audioPaused;
-    var current_idx = this.state.options.playIndex;
-    audioPaused[current_idx] = true;
-    if (current_idx === idx) {
+    var paused = false;
+    if (this.state.options.playIndex === idx) {
       if (this.audio.paused) {
         this.audio.play();
-        audioPaused[current_idx] = false;
+        paused = false;
       } else {
         this.audio.pause();
-        audioPaused[current_idx] = true;
+        paused = true;
       }
-    } else {
-      audioPaused[idx] = !audioPaused[idx];
-    }
+    } 
     const data = {
       ...this.state.options,
       playIndex: idx
     };
-    this.setState({ options: data, audioPaused: audioPaused });
+    this.setState({ options: data, paused: paused});
   };
 
   render() {
@@ -145,7 +139,7 @@ class PianoPage extends React.PureComponent {
                     {
                       <FontAwesomeIcon
                         icon={
-                          this.state.audioPaused[idx]
+                          (this.state.options.playIndex !== idx || this.state.paused)
                             ? faCirclePlay
                             : faCirclePause
                         }
