@@ -119,7 +119,7 @@ class PianoPage extends React.PureComponent {
     return (
       <div>
         <ReactJkMusicPlayer {...this.state.options}></ReactJkMusicPlayer>
-        <Table striped bordered hover>
+        <Table striped hover>
           <thead>
             <tr>
               <th>#</th>
