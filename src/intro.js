@@ -50,6 +50,7 @@ class HeaderMenu extends React.Component {
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#game">Game</Nav.Link>
               <Nav.Link href="#piano">Piano</Nav.Link>
+              <Nav.Link href='#music'>Music</Nav.Link>
               <Nav.Link href="#link">Achive</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
             </Nav>

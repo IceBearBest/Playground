@@ -3,6 +3,7 @@ import { InitCatJumpSingle } from './catjump-scene.js';
 import { InitMatter } from './tutorial/matter_example.js';
 import { InitPhaserMatter } from './tutorial/phaser_matter.js';
 import { HeaderMenu, GamePage, PianoPage } from './intro.js';
+import { RenderSheet } from './sheetmusic.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -22,6 +23,8 @@ if (window.location.hash === '#CatJumpSingle') {
   ReactDOM.render(<GamePage></GamePage>, document.getElementById('root'));
 } else if (window.location.hash === '#piano'){
   ReactDOM.render(<PianoPage></PianoPage>, document.getElementById('root'))
+} else if (window.location.hash === '#music'){
+  RenderSheet()
 }
 else
 {
