@@ -8,6 +8,7 @@ import {
   CardGroup,
   Table
 } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
 import ReactJkMusicPlayer from 'react-jinke-music-player';
 import 'react-jinke-music-player/assets/index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -50,7 +51,7 @@ class HeaderMenu extends React.Component {
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#game">Game</Nav.Link>
               <Nav.Link href="#piano">Piano</Nav.Link>
-              <Nav.Link href='#music'>Music</Nav.Link>
+              {/* <Nav.Link href='#music'>Music</Nav.Link> */}
               <Nav.Link href="#link">Achive</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
             </Nav>
@@ -126,8 +127,8 @@ class PianoPage extends React.PureComponent {
               <th>#</th>
               <th>Played On</th>
               <th>Name</th>
-              <th>Chord</th>
-              <th>Author</th>
+              {/* <th>Chord</th> */}
+              {/* <th>Author</th> */}
             </tr>
           </thead>
           <tbody>
@@ -151,12 +152,12 @@ class PianoPage extends React.PureComponent {
                       .concat(song.name)
                       .concat(
                         song.versionTag
-                          ? ' ('.concat(song.versionTag.join(',')).concat(') ')
+                          ? ' ('.concat(song.versionTag.join(',')).concat(')')
                           : ''
-                      )}
+                      ).concat(song.author?' - '.concat(song.author):'')}
                   </td>
-                  <td>{song.chord}</td>
-                  <td>{song.author}</td>
+                  {/* <td>{song.chord}</td> */}
+                  {/* <td>{song.author}</td> */}
                 </tr>
               );
             })}
@@ -184,4 +185,11 @@ class MyGameCard extends React.Component {
   }
 }
 
-export { GamePage, HeaderMenu, PianoPage };
+function RenderGamePage (){
+  ReactDOM.render(<GamePage></GamePage>, document.getElementById('root'));
+}
+function RenderPianoPage () {
+  ReactDOM.render(<PianoPage></PianoPage>, document.getElementById('root'))
+}
+
+export {  HeaderMenu, RenderGamePage, RenderPianoPage };
