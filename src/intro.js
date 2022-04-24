@@ -52,7 +52,7 @@ class HeaderMenu extends React.Component {
               <Nav.Link href="#game">Game</Nav.Link>
               <Nav.Link href="#piano">Piano</Nav.Link>
               {/* <Nav.Link href='#music'>Music</Nav.Link> */}
-              <Nav.Link href="#link">Achive</Nav.Link>
+              <Nav.Link href="#achive">Achive</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -191,5 +191,4 @@ function RenderGamePage (){
 function RenderPianoPage () {
   ReactDOM.render(<PianoPage></PianoPage>, document.getElementById('root'))
 }
-
 export {  HeaderMenu, RenderGamePage, RenderPianoPage };

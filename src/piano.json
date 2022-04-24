@@ -1,5 +1,14 @@
 [
   {
+    "name": "Morning Mood",
+    "versionTag":["with Dynamics"],
+    "filePath": "MorningMood3.mp3",
+    "playedOn": "2022-04-21",
+    "origin": "\"Peer Gynt Suit\", No. 1, Op. 46 (Theme from 1st Movement)",
+    "author": "Edward Greig",
+    "arrangedBy": "James Bastien"
+  },
+  {
     "name": "On Wings of Song",
     "versionTag": ["RH"],
     "filePath": "OnWingsOfSong(RH).mp3",
