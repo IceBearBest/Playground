@@ -1,5 +1,37 @@
 [
   {
+    "name": "Lullaby",
+    "filePath": "Lullaby-20220731.m4a",
+    "playedOn": "2022-07-31",
+    "origin": "Weigenlied(\"Cradle Song\"), Op. 49, No. 4",
+    "author": "Johannes Brahms",
+    "arrangedBy": "James Bastien"
+  },
+  {
+    "name": "On wings of song",
+    "filePath": "On wings of song - 20220731.m4a",
+    "playedOn": "2022-07-31",
+    "origin": "Op. 34, No. 2",
+    "author": "Felix Mendelssohn",
+    "arrangedBy": "James Bastien"
+  },
+  {
+    "name": "March Militarie",
+    "filePath": "March Militaire 20220723.m4a",
+    "playedOn": "2022-07-23",
+    "origin": "Op. 51, No. 1 (1st Theme)",
+    "author": "Franz Shubert",
+    "arrangedBy": "James Bastien"
+  },
+  {
+    "name": "Aria",
+    "filePath": "Aria - Marriage of Figaro 20220723.m4a",
+    "playedOn": "2022-07-23",
+    "origin": "Marriage of Figaro, Act I",
+    "author": "Wolfang Amadeus Mozart",
+    "arrangedBy": "James Bastien"
+  },
+  {
     "name": "Morning Mood",
     "versionTag":["with Dynamics"],
     "filePath": "MorningMood3.mp3",
