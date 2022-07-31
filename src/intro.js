@@ -125,7 +125,7 @@ class PianoPage extends React.PureComponent {
           <thead>
             <tr>
               <th>#</th>
-              <th>Played On</th>
+              <th>Recorded On</th>
               <th>Name</th>
               {/* <th>Chord</th> */}
               {/* <th>Author</th> */}
